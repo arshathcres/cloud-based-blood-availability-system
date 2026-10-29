@@ -5,7 +5,6 @@ import {
   ArrowRight,
   Building2,
   CheckCircle2,
-  ChevronDown,
   Clock3,
   Droplet,
   HeartPulse,
