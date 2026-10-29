@@ -58,7 +58,7 @@ This system connects people who need blood with participating blood banks throug
    ```bash
    cp .env.example .env.local
    ```
-   Edit `.env.local` if you need to change the API URL or demo admin password.
+   Edit `.env.local` and replace the `VITE_API_BASE_URL` placeholder with your API Gateway base URL. The URL is used by the browser and is not a secret.
 
 4. **Start the development server**
    ```bash

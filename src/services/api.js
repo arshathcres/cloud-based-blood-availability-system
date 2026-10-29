@@ -1,7 +1,12 @@
-const BASE_URL = (
-  import.meta.env.VITE_API_BASE_URL ||
-  "https://on8wmr7f1b.execute-api.us-east-1.amazonaws.com/dev"
-).replace(/\/$/, "");
+const configuredBaseUrl = import.meta.env.VITE_API_BASE_URL;
+
+if (!configuredBaseUrl) {
+  throw new Error(
+    "Missing VITE_API_BASE_URL. Set it in your local .env.local file.",
+  );
+}
+
+const BASE_URL = configuredBaseUrl.replace(/\/$/, "");
 
 async function request(path, { method = "GET", params, body } = {}) {
   const url = new URL(`${BASE_URL}/${path.replace(/^\//, "")}`);

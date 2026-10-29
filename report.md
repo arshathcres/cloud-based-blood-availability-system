@@ -94,10 +94,10 @@ Configures **Vite** (the fast build tool & dev server) for this project:
 ### 4. `.env.example`
 **Role:** Environment variable template
 
-Provides a template for developers to create their own `.env.local` file. Contains two variables:
+Provides a template for developers to create their own `.env.local` file. Replace the API URL placeholder with the endpoint for your environment. Contains two variables:
 
 ```env
-VITE_API_BASE_URL=https://on8wmr7f1b.execute-api.us-east-1.amazonaws.com/dev
+VITE_API_BASE_URL=https://your-api-id.execute-api.your-region.amazonaws.com/your-stage
 VITE_DEMO_ADMIN_PASSWORD=change-this-demo-password
 ```
 
@@ -358,10 +358,7 @@ All pages call:
 
 ## ☁️ Backend API Contract
 
-The frontend connects to:
-```
-https://on8wmr7f1b.execute-api.us-east-1.amazonaws.com/dev
-```
+The frontend connects to the base URL configured through `VITE_API_BASE_URL` in the local environment. This Vite variable is included in the browser bundle and is not secret.
 
 | Endpoint | Method | Used By |
 |----------|--------|---------|
